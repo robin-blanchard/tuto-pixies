@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pixies.photos.apps.PhotosConfig'
 ]
 
 MIDDLEWARE = [
@@ -78,3 +79,7 @@ STATIC_URL = '/static/'
 
 # Database settings
 DATABASES = {"default": env.db()}
+
+# Timezone settings
+TIME_ZONE = "UTC"
+USE_TZ = True
