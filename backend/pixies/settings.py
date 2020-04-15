@@ -1,5 +1,15 @@
-SECRET_KEY = 'hushhush'
-DEBUG = 1
+import os
+import environ
+
+env = environ.Env()
+
+BASE_LOC = environ.Path(__file__)-2
+dot_env = str(BASE_LOC.path(".env"))
+if os.path.exists(dot_env):
+    env.read_env(dot_env)
+
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env("DEBUG", default=False)
 
 # Application definition
 
