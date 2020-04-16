@@ -22,11 +22,13 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     'pixies.photos.apps.PhotosConfig',
-    'rest_framework'
+    'rest_framework',
+    "corsheaders"
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,3 +94,6 @@ USE_TZ = True
 
 # Allowed Hosts
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+
+# CORS Whitelist
+CORS_ORIGIN_WHITELIST = env.list("CORS_ORIGIN_WHITELIST", default=[])

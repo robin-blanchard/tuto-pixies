@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { useEffect } from "react";
+import Axios from "axios";
 
-const items = [
+const initialItems = [
   {
     url:
       "https://photos.smugmug.com/Animals/Birds/Warblers/Yellow-Warbler-2013/i-Tr5rQBN/0/f058a66f/X5/191130_Camino%20de%20grava%20entre%20el%20Corchito%20y%20Estero%20de%20Chicxulub_079-X5.jpg",
@@ -23,6 +25,19 @@ const items = [
 ];
 
 const App = () => {
+  const [items, setItems] = useState(initialItems);
+
+  useEffect(() => {
+    const url = "http://localhost:9090/api/";
+    Axios.get(url)
+      .then((response) => {
+        setItems(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="container">
       <div className="row">
