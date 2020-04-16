@@ -28,7 +28,7 @@ const App = () => {
   const [items, setItems] = useState(initialItems);
 
   useEffect(() => {
-    const url = "http://localhost:9090/api/";
+    const url = BACKEND_URL;
     Axios.get(url)
       .then((response) => {
         setItems(response.data);
