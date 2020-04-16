@@ -25,5 +25,15 @@ services:
     depends_on:
       - db
 
+  frontend:
+    build:
+      context: ../frontend
+    ports:
+      - 9091:80
+    environment:
+      - PORT=80
+    depends_on:
+      - backend
+
 volumes:
   data:
