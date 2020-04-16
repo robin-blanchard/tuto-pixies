@@ -81,5 +81,5 @@ STATIC_URL = '/static/'
 DATABASES = {"default": env.db()}
 
 # Timezone settings
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Paris"
 USE_TZ = True
