@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pixies.photos.apps.PhotosConfig'
+    'pixies.photos.apps.PhotosConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
