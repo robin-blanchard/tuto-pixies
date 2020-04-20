@@ -28,6 +28,8 @@ const App = () => {
   const [items, setItems] = useState(initialItems);
 
   useEffect(() => {
+    console.log("app", process.env.BACKEND_URL);
+    console.log("app", BACKEND_URL);
     const url = BACKEND_URL;
     Axios.get(url)
       .then((response) => {

@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+console.log("webpack", process.env.BACKEND_URL);
 var webpack = require("webpack");
 
 module.exports = {

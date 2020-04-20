@@ -1,8 +1,11 @@
 FROM node:alpine as build
+ARG backend_url
 
 COPY package.json ./
 RUN npm install
 COPY . .
+
+ENV BACKEND_URL=$backend_url
 RUN npm run build
 
 
